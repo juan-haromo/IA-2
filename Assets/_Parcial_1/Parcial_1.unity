@@ -2728,7 +2728,7 @@ MonoBehaviour:
   currentAction: {fileID: 645359611}
   player: {fileID: 968739340}
   viewDistance: 500
-  viewAngle: 150
+  viewAngle: 120
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

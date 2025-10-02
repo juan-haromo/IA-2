@@ -18,7 +18,7 @@ Esta IA cuenta con multiples ***sentidos*** los cuales son:
 * Percepción de sus propias estadísticas: Vida, balas, y cantidad de curaciones.
 * Vista: Puede percibir enemigos en un cierto FOV, basado en un angulo de vision y en una distancia maxima.
 
-En base a esto valora su situación y planea que acción puede ***ejecutar***, siendo dichas acciones:
+En base a esto valora su situación y ***planea*** que acción puede ejecutar, siendo dichas acciones:
 * Curar al jugador: En base a su porcentaje de vida y la cantidad de curas disponibles disponibles.
 * Autocuración: Dependiendo de su porcentaje de vida y curas disponibles.
 * Dar balas: Dará balas al jugador en base de cuantas le falten del máximo (50) y si el jugador tiene menos balas que la IA.

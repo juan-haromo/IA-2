@@ -181,18 +181,18 @@ public class SPA_Sheva : MonoBehaviour
     }
 
     Vector3 wanderDestination;
-    float wanderTime;
+    float wanderTime = 0;
     float wanderDelay = 5.0f;
     public void Wander()
     {
-        if (Time.time < wanderTime)
+        if (Time.time > wanderTime)
         {
+        Debug.Log("Looking for destination " );
             bool found = false;
             while (!found)
             {
                 if (NavMesh.SamplePosition(player.transform.position + (Random.insideUnitSphere * 10f), out NavMeshHit hit, 10f, 1))
                 {
-                    Debug.Log("Looking for destination " + hit.position);
                     wanderDestination = hit.position;
                     found = true;
                 }
