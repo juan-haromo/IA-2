@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737368b46da4da8419c858aeea4fc430, type: 3}
+  m_Name: MoveForward
+  m_EditorClassIdentifier: Assembly-CSharp::MoveForward
+  transitions:
+  - condition: {fileID: 11400000, guid: 00869a196c862ce468e10ec9ddff489f, type: 2}
+    state: {fileID: 11400000, guid: 686cab5da2c13534099c566567b9d6a9, type: 2}
+  speed: 2

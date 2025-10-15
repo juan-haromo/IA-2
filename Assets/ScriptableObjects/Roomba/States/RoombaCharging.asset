@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bb06cc39b00dc41b9204292123e5d9, type: 3}
+  m_Name: RoombaCharging
+  m_EditorClassIdentifier: Assembly-CSharp::AlterFloat
+  transitions:
+  - condition: {fileID: 11400000, guid: 69fbabfe3084fc246bd637748424918c, type: 2}
+    state: {fileID: 11400000, guid: ff40ec84e4631e2429646d74c9096612, type: 2}
+  amount: 10
+  inRate: 1
+  minValue: 0
+  maxValue: 100
+  key: battery
