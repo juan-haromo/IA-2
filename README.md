@@ -44,4 +44,4 @@ Para esta actividad, realize una IA de guerrero que se encarga de patrullar, bus
 Mientras que el healer se mueve alrededor del guerrero, le da velocidad cuando esta persiguiendo y lo cura cuando se encuentra en peligro. 
 
 La lógica de cuando cambien sus estados es la siguiente. 
-[Lógica de las IAS](./Imagenes/IAs_Comunicadas.jpg)
+![Lógica de las IAS](./Imagenes/IAs_Comunicadas.jpg)
