@@ -16,7 +16,7 @@ public class P1_Player : MonoBehaviour
         input.Player.Enable();
         input.Player.Shoot.started += Shoot;
         input.Player.SelfDamage.started += (InputAction.CallbackContext context) => Damage(10);
-        input.Player.DamageSheva.started += (InputAction.CallbackContext context) => sheva.Damage(10);
+        if (sheva != null){ input.Player.DamageSheva.started += (InputAction.CallbackContext context) => sheva.Damage(10);}
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -116,6 +116,7 @@ public class P1_Player : MonoBehaviour
             impactParticles.gameObject.transform.SetPositionAndRotation(hit.point, Quaternion.LookRotation(hit.normal));
             impactParticles.Play();
             if (hit.collider.CompareTag("Enemy")) { target = hit.collider.gameObject.transform; }
+            if(hit.collider.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable)){ damageable.Damage(gameObject, 10); }
         }
     }
     private void Shoot(UnityEngine.InputSystem.InputAction.CallbackContext context)

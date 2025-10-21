@@ -7,9 +7,11 @@ public class CheckDistance : Condition
     [SerializeField] string pointName;
     public override bool Check(StateMachine stateMachine)
     {
-        if(stateMachine.ContainsPoint(pointName, out TransformContext context))
+        Vector3 point = stateMachine.blackBoard.GetValue<Vector3>(pointName);
+
+        if(point != null)
         {
-            return Vector3.Distance(stateMachine.transform.position, context.value.position) < minDistance;
+            return Vector3.Distance(stateMachine.transform.position, point) < minDistance;
         }
         return false;
     }

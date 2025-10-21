@@ -10,10 +10,11 @@ public class CheckForObject : Condition
     public string objectName;
     public override bool Check(StateMachine stateMachine)
     {
+        Debug.DrawLine(stateMachine.transform.position, stateMachine.transform.position + (stateMachine.transform.forward * viewDistance));
         List<Transform> objects = FindObject(stateMachine.gameObject.transform);
         if (objects.Count > 0)
         {
-            stateMachine.AddPoint(objectName, objects[0]);
+            stateMachine.blackBoard.SetValue<Vector3>(objectName, objects[0].position);
             return true;
         }
         return false;

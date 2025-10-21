@@ -1,21 +1,30 @@
 
 using UnityEngine;
+using UnityEngine.AI;
 
 [CreateAssetMenu(fileName = "MoveToPoint",menuName = "FSM/States/MoveToPoint")]
 public class MoveToPoint : State
 {
-    public string pointName;
-    public float stopDistance;
+    public  string pointName = "A";
+
     public override void Enter(StateMachine stateMachine)
     {
-        if (stateMachine.ContainsPoint(pointName, out TransformContext context))
+        GetPoint(stateMachine);
+    }
+
+    private void GetPoint(StateMachine stateMachine)
+    {
+        Vector3 destination;
+        destination = stateMachine.blackBoard.GetValue<Vector3>(pointName);
+        if (destination != null)
         {
-            stateMachine.agent.SetDestination(context.value.position);
+            NavMesh.SamplePosition(destination, out NavMeshHit hit, 5, NavMesh.AllAreas);
+            stateMachine.agent.SetDestination(hit.position);
         }
         else
         {
-            Debug.LogError("Point " + pointName + " is undefined or inaccesible");
-        } 
+            Debug.LogError("Point is undefined or inaccesible");
+        }
     }
 
     public override void Exit(StateMachine stateMachine)
@@ -26,7 +35,7 @@ public class MoveToPoint : State
 
     public override void FrameUpdate(StateMachine stateMachine)
     {
-
+        GetPoint(stateMachine);
     }
 
     public override void PhysicUpdate()

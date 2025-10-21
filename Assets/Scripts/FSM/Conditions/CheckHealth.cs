@@ -7,6 +7,6 @@ public class CheckHealth : Condition
 
     public override bool Check(StateMachine stateMachine)
     {
-        return stateMachine.health < minHealth;
+        return stateMachine.blackBoard.GetValue<int>("health") < minHealth;
     }
 }

@@ -31,3 +31,17 @@ Una vez tomada la acción esta se ejecuta hasta que se complete o se tome alguna
 * Dar balas: Se acerca al jugador y le de parte de su munición.
 * Atacar: Busca un enemigo y lo ataca. Le da prioridad primero al ultimo enemigo que ataco, después al objetivo actual del jugador (ultimo objetivo que el jugador ataco) si no puede ver a ninguno de estos, atacara al enemigo mas cercano.
 * Vagar: Se moverá alrededor del jugador y lo seguirá a donde vaya.
+
+
+# Maquinas de estado conectadas
+
+Para conectar ambas maquinas de estado se hizo que ambas tuvieran el blackboard de la otra como variable en su propio blackboard, siendo asi que ahora ambas pueden revisar los estados y variables de la otra para asi poder crear estados mas complejos 
+
+## Guerrero y healer
+
+
+Para esta actividad, realize una IA de guerrero que se encarga de patrullar, buscar enemigos y atacar a cualquiera que le falte el respeto a su healer.
+Mientras que el healer se mueve alrededor del guerrero, le da velocidad cuando esta persiguiendo y lo cura cuando se encuentra en peligro. 
+
+La lógica de cuando cambien sus estados es la siguiente. 
+[Lógica de las IAS](./Imagenes/IAs_Comunicadas.jpg)

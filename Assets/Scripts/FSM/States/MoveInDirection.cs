@@ -18,7 +18,6 @@ public class MoveInDirection : State
     public override void FrameUpdate(StateMachine stateMachine)
     {
         stateMachine.transform.Translate(speed * Time.deltaTime * moveDirection.normalized, Space.Self);
-        stateMachine.health -= 1;
     }
 
     public override void PhysicUpdate()

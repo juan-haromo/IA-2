@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea6764be0c36e947a6d22ea821f2a42, type: 3}
+  m_Name: WanderDelay
+  m_EditorClassIdentifier: Assembly-CSharp::DelayState
+  transitions:
+  - condition: {fileID: 11400000, guid: df4fc1724413c4d49b8b8f51a5146409, type: 2}
+    state: {fileID: 11400000, guid: 968b0843b6cb4dc4888d02fddd7600c0, type: 2}
+  - condition: {fileID: 11400000, guid: edfd0bfce238692459841d80fcd9d997, type: 2}
+    state: {fileID: 11400000, guid: 6b0833115b2eb934486a1adf915cf3b4, type: 2}
+  - condition: {fileID: 11400000, guid: 4fff8d32dbb29104fb1f467e20bff5a6, type: 2}
+    state: {fileID: 11400000, guid: 1b8fcc55a43575b408369690a19d5adb, type: 2}
+  delayName: wander_delay
+  minDelay: 1
+  maxDelay: 3
