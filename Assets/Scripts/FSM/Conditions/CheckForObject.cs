@@ -38,7 +38,6 @@ public class CheckForObject : Condition
             if (hit.collider != col) { continue; }
             detectedObjects.Add(col.gameObject.transform);
         }
-
         return detectedObjects;
     }
 }

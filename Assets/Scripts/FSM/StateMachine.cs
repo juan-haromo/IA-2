@@ -43,6 +43,8 @@ public class StateMachine : MonoBehaviour
         CurrentState.CheckTransitions(this);
     }
 
+
+    #region FakeBlackboard
     public bool ContainsNumber(string key)
     {
         return ContainsNumber(key, out FloatContext number);
@@ -162,4 +164,5 @@ public class StateMachine : MonoBehaviour
         }
         return null;
     }
+    #endregion
 }
