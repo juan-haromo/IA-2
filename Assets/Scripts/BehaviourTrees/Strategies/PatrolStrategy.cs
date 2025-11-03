@@ -21,11 +21,11 @@ public class PatrolStrategy : IStrategy
         this.patrolSpeed = patrolSpeed;
     }
 
-    public Status Procces()
+    public NodeStatus Procces()
     {
         if (currentIndex == patrolPoints.Count)
         {
-            return Status.Succes;
+            return NodeStatus.Success;
         }
 
         Transform target = patrolPoints[currentIndex];
@@ -42,7 +42,7 @@ public class PatrolStrategy : IStrategy
         {
             isPathCalculated = true;
         }
-        return Status.Running;
+        return NodeStatus.Running;
     }
 
     public void Reset()

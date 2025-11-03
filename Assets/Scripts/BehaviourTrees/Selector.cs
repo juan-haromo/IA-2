@@ -10,24 +10,24 @@ namespace BehaviourTrees
         {
         }
 
-        public override Status Process()
+        public override NodeStatus Process()
         {
             if (currentChild < children.Count)
             {
                 switch (children[currentChild].Process())
                 {
-                    case Status.Running:
-                        return Status.Succes;
-                    case Status.Succes:
+                    case NodeStatus.Running:
+                        return NodeStatus.Running;
+                    case NodeStatus.Success:
                         Reset();
-                        return Status.Succes;
-                    case Status.Failure:
+                        return NodeStatus.Success;
+                    case NodeStatus.Failure:
                         currentChild++;
-                        return currentChild == children.Count? Status.Failure : Status.Running;
+                        return NodeStatus.Running;
                 }
             }
             Reset();
-            return Status.Failure;
+            return NodeStatus.Failure;
         }
     }
 }

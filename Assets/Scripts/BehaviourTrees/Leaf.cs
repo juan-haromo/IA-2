@@ -8,7 +8,7 @@ namespace BehaviourTrees
             this.strategy = strategy;
         }
 
-        public override Status Process()
+        public override NodeStatus Process()
         {
             return strategy.Procces();
         }

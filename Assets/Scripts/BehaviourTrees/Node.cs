@@ -21,7 +21,7 @@ namespace BehaviourTrees
             children.Add(child);
         }
 
-        public virtual Status Process() => children[currentChild].Process();
+        public virtual NodeStatus Process() => children[currentChild].Process();
 
         public virtual void Reset()
         {

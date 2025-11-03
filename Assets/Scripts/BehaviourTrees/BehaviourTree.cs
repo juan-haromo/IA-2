@@ -6,20 +6,20 @@ namespace BehaviourTrees
         {
         }
 
-        public override Status Process()
+        public override NodeStatus Process()
         {
             while (currentChild < children.Count)
             {
-                Status status = children[currentChild].Process();
+                NodeStatus status = children[currentChild].Process();
 
-                if (status != Status.Succes)
+                if (status != NodeStatus.Success)
                 {
                     return status;
                 }
                 currentChild++;
             }
             Reset();
-            return Status.Succes;
+            return NodeStatus.Success;
         }
 
         public override void Reset()

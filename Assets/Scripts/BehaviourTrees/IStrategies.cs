@@ -2,7 +2,7 @@ namespace BehaviourTrees
 {
     public interface IStrategy
     {
-        Status Procces();
+        NodeStatus Procces();
         void Reset();
     }
 }

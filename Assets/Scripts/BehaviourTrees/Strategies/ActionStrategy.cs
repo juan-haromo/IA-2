@@ -4,10 +4,10 @@ namespace BehaviourTrees
 {
     public class ActionStrategy : IStrategy
     {
-        public Status Procces()
+        public NodeStatus Procces()
         {
             action?.Invoke();
-            return Status.Succes;
+            return NodeStatus.Success;
         }
 
         public void Reset()
