@@ -8,6 +8,7 @@ public class StrategyWanderAround : IStrategy
     Transform pointToWander;
     float wanderRadius;
     NavMeshAgent agent;
+    bool findPoint;
     public StrategyWanderAround(Transform pointToWander, float wanderRadius, NavMeshAgent agent)
     {
         this.pointToWander = pointToWander;
@@ -18,9 +19,13 @@ public class StrategyWanderAround : IStrategy
 
     public NodeStatus Process()
     {
-        if (arrived)
+        if (!findPoint)
         {
             agent.SetDestination(FindPoint(pointToWander.position));
+            findPoint = true;
+        }
+        if (arrived)
+        {
             return NodeStatus.Success;
         }
         arrived = agent.remainingDistance < 0.5f;
@@ -29,7 +34,8 @@ public class StrategyWanderAround : IStrategy
 
     public void Reset()
     {
-        arrived = true;
+        arrived = false;
+        findPoint = false;
     }
 
     Vector3 FindPoint(Vector3 startPos)
