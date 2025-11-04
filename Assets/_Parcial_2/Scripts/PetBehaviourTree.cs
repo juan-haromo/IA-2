@@ -33,7 +33,7 @@ public class PetBehaviourTree : MonoBehaviour
         BehaviourTrees.Condition ownerNearHouse = new BehaviourTrees.Condition(() =>
         {
             bool result = Vector3.Distance(player.position, houseCenter.position) < followRadius;
-            if(result){ isTimeRegistered = false; }
+            if(result){ nextWaitTime = Time.time + waitTime; }
             return result;
         });
         FollowTransform followPlayer = new FollowTransform(player, agent);
@@ -48,16 +48,11 @@ public class PetBehaviourTree : MonoBehaviour
         Sequencer waitingAwaySequencer = new Sequencer("Waiting away sequencer");
         BehaviourTrees.Condition wasOwnerNearHouse = new BehaviourTrees.Condition(() =>
         {
-            if (!isTimeRegistered)
-            {
-                nextWaitTime = Time.time + waitTime;
-                isTimeRegistered = true;
-            }
             if (nextWaitTime < Time.time)
             {
-                return true;
-            }
             return false;
+            }
+                return true;
         });
         waitingAwaySequencer.AddChildren(new Leaf("Was owner near house", wasOwnerNearHouse));
         waitingAwaySequencer.AddChildren(new Leaf("Waiting", new WaitStrategy(agent, nextWaitTime)));
