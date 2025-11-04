@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b26ee3c34e0d94488408a39c9bd693, type: 3}
   m_Name: FollowPlayer
   m_EditorClassIdentifier: Assembly-CSharp::MoveToTransform
-  transitions: []
+  transitions:
+  - condition: {fileID: 11400000, guid: a237764d2dd5a6242867c917912ae406, type: 2}
+    state: {fileID: 11400000, guid: cf36f5969a919744a92d6bfccb3d8823, type: 2}
   transformName: player
+  stopDistance: 3

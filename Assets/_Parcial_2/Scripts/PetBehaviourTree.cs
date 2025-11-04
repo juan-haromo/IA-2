@@ -53,14 +53,14 @@ public class PetBehaviourTree : MonoBehaviour
                 nextWaitTime = Time.time + waitTime;
                 isTimeRegistered = true;
             }
-            if (nextWaitTime < Time.time && !isTimeRegistered)
+            if (nextWaitTime < Time.time)
             {
                 return true;
             }
             return false;
         });
         waitingAwaySequencer.AddChildren(new Leaf("Was owner near house", wasOwnerNearHouse));
-        waitingAwaySequencer.AddChildren(new Leaf("Waiting", new WaitStrategy(agent)));
+        waitingAwaySequencer.AddChildren(new Leaf("Waiting", new WaitStrategy(agent, nextWaitTime)));
 
         StrategyWanderAround wanderAround = new StrategyWanderAround(houseCenter, houseRadius, agent);
 

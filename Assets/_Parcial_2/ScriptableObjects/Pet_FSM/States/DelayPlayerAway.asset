@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea6764be0c36e947a6d22ea821f2a42, type: 3}
   m_Name: DelayPlayerAway
   m_EditorClassIdentifier: Assembly-CSharp::DelayState
-  transitions: []
+  transitions:
+  - condition: {fileID: 11400000, guid: 5baf2dcd2e14880429fe733c08c034c8, type: 2}
+    state: {fileID: 11400000, guid: a13b154f7bae96743866984ef16d2934, type: 2}
+  - condition: {fileID: 11400000, guid: b88849bb63a4cf24a8e87ab1262cc2e6, type: 2}
+    state: {fileID: 11400000, guid: 82192bdce2722bd4988b4c4f1c3df492, type: 2}
   delayName: player_away
-  minDelay: 0
-  maxDelay: 0
+  minDelay: 2
+  maxDelay: 3

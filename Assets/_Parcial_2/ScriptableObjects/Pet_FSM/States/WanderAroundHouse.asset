@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: WanderAroundHouse
   m_EditorClassIdentifier: Assembly-CSharp::WanderAroundTransform
   transitions:
+  - condition: {fileID: 11400000, guid: 5baf2dcd2e14880429fe733c08c034c8, type: 2}
+    state: {fileID: 11400000, guid: a13b154f7bae96743866984ef16d2934, type: 2}
   - condition: {fileID: 11400000, guid: 616b075ca44ee234bab7f8a152f20e01, type: 2}
     state: {fileID: 11400000, guid: bbabc0965e39c0a45a685cacbbf452ba, type: 2}
   wanderRadius: 10
