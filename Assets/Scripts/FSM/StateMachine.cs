@@ -12,11 +12,11 @@ public class StateMachine : MonoBehaviour
     [SerializeField] List<TransformContext> spatialContext;
     public NavMeshAgent agent;
 
-    public BlackBoard blackBoard;
+    public BlackBoard blackBoard = new BlackBoard();
 
     void Awake()
     {
-        blackBoard = new BlackBoard();
+        // blackBoard = new BlackBoard();
     }
 
     void Start()

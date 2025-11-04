@@ -11,7 +11,10 @@ public class CheckTransformDistance : Condition
 
         if(point != null)
         {
-            return Vector3.Distance(stateMachine.transform.position, point.position) < minDistance;
+            float distance = Vector3.Distance(stateMachine.transform.position, point.position);
+            Debug.Log("Position " + stateMachine.transform.position + " target pos " + point.position);
+            Debug.Log(distance);
+            return distance < minDistance;
         }
         return false;
     }

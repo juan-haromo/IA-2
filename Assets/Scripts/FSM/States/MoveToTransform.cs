@@ -4,6 +4,7 @@ using UnityEngine;
 public class MoveToTransform : State
 {
     [SerializeField] string transformName;
+    [SerializeField] float stopDistance;
     public override void Enter(StateMachine stateMachine)
     {
 
@@ -18,8 +19,10 @@ public class MoveToTransform : State
     {
         Transform destination = stateMachine.blackBoard.GetValue<Transform>(transformName);
         Debug.Log(destination.gameObject);
-        if( destination == null || destination == default) { return; }
-        stateMachine.agent.SetDestination(destination.position);
+        if (destination == null || destination == default) { return; }
+        if (Vector3.Distance(stateMachine.transform.position,destination.position) <= stopDistance) { stateMachine.agent.SetDestination(stateMachine.transform.position); }
+        else{stateMachine.agent.SetDestination(destination.position);}
+        
     }
 
     public override void PhysicUpdate()

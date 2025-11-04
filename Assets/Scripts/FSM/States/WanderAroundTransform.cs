@@ -5,9 +5,6 @@ using UnityEngine.AI;
 public class WanderAroundTransform : State
 {
     [SerializeField] float wanderRadius;
-    [SerializeField] float pointStopDistance;
-    [SerializeField] float minWaitTime;
-    [SerializeField] float maxWaitTime;
     [SerializeField] string transformName;
     [SerializeField] string pointName;
 
@@ -38,7 +35,8 @@ public class WanderAroundTransform : State
     {
         Vector3 randomPoint = startPos + (Random.insideUnitSphere * wanderRadius);
 
-        NavMesh.SamplePosition(randomPoint, out NavMeshHit hit, wanderRadius, NavMesh.AllAreas);
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomPoint, out hit, 10, NavMesh.AllAreas);
         return hit.position;
     }
 }
