@@ -4,8 +4,6 @@ using BehaviourTrees;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace BehaviourTrees
-{
     public class Patrol : MonoBehaviour
     {
 
@@ -47,5 +45,4 @@ namespace BehaviourTrees
             Debug.Log(tree.GetCurrentChild);
         }
     }
-}
 

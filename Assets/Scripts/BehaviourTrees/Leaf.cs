@@ -10,7 +10,7 @@ namespace BehaviourTrees
 
         public override NodeStatus Process()
         {
-            return strategy.Procces();
+            return strategy.Process();
         }
 
         public override void Reset()

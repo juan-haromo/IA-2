@@ -16,6 +16,6 @@ namespace BehaviourTrees
             this.predicate = predicate;
         }
 
-        public NodeStatus Procces() => predicate() ? NodeStatus.Success : NodeStatus.Failure;
+        public NodeStatus Process() => predicate() ? NodeStatus.Success : NodeStatus.Failure;
     }
 }

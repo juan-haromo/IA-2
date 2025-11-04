@@ -4,7 +4,7 @@ namespace BehaviourTrees
 {
     public class ActionStrategy : IStrategy
     {
-        public NodeStatus Procces()
+        public NodeStatus Process()
         {
             action?.Invoke();
             return NodeStatus.Success;

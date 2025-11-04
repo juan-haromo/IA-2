@@ -1,4 +1,4 @@
-using BehaviourTrees;
+using UnityEngine;
 
 namespace BehaviourTrees
 {
@@ -10,6 +10,7 @@ namespace BehaviourTrees
 
         public override NodeStatus Process()
         {
+            Debug.Log(children[currentChild].name);
             if (currentChild < children.Count)
             {
                 switch (children[currentChild].Process())

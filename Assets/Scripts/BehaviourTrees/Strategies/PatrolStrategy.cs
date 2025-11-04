@@ -21,7 +21,7 @@ public class PatrolStrategy : IStrategy
         this.patrolSpeed = patrolSpeed;
     }
 
-    public NodeStatus Procces()
+    public NodeStatus Process()
     {
         if (currentIndex == patrolPoints.Count)
         {
