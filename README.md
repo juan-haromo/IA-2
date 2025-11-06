@@ -71,11 +71,11 @@ Siendo que con estos estados y condiciones, ordenados según el modelo a usar te
 
 ## Ejecución  
 
-La IA realizada en el FSM se puede encontrar en la carpeta [FSM mascota](./Assets/_Parcial_2/ScriptableObjects/Pet_FSM) asi como su registro de variables en el script [PetSFMVariables](Assets/_Parcial_2/Scripts/PetFSMVariables.cs).
-
-Pero se puede resumir en lo siguiente:
+La escena de trabajo es [Parcial 2](./Assets/IA_2/Assets/Parcial_2/Parcial_2.unity)
 
 ### FSM 
+
+La IA realizada en el FSM se puede encontrar en la carpeta [FSM mascota](./Assets/_Parcial_2/ScriptableObjects/Pet_FSM) asi como su registro de variables en el script [PetSFMVariables](Assets/_Parcial_2/Scripts/PetFSMVariables.cs).
 
 Para la FSM se uso la estructura previamente creada asi como los estados modulares mostrados en el diagrama.
 
@@ -83,6 +83,8 @@ Como complicación para esta maquina me encontré con el sincronizar variables d
 Ademas de se la mas fácil de las 2 al tener mayor experiencia con la estructura.
 
 ### BT
+
+La IA realizada para el BT se encuentra en [PetBehaviourTree](./Assets/Parcial_2/Scripts/PetBehaviourTree.cs)
 
 Para el BT se empleo la estructura previamente creada asi como las variables y estados marcados en el diagrama.
 
